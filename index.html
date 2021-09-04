@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.svg">
+    <title>Happy Teachers Day Divaker Sir</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(to right, #FDFBFB, #EBEDEE 70%);
+            margin-top: 100px;
+            overflow: scroll;
+
+        }
+
+        h1 {
+            font-family: 'Poppins', serif;
+            align-self: center;
+            text-align: center;
+            color: #f35626;
+            background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-animation: hue 10s infinite linear;
+
+        }
+
+        @-webkit-keyframes hue {
+            from {
+                -webkit-filter: hue-rotate(0deg);
+            }
+
+            to {
+                -webkit-filter: hue-rotate(-360deg);
+            }
+        }
+
+        #first {
+            margin-top: 100px;
+            z-index: 1;
+            position: relative;
+            left: 37%;
+            cursor: pointer;
+            min-width: 200px;
+            border: 5px solid #444;
+        }
+
+        ::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            width: 5px;
+            background: linear-gradient(92deg, #f35626, #feab3a);
+        }
+
+        #quote {
+            margin-top: 50px;
+            font-size: 20px;
+            font-family: 'Quicksand', cursive;
+            -webkit-animation: glow 1s ease-in-out infinite alternate;
+            -moz-animation: glow 1s ease-in-out infinite alternate;
+            animation: glow 1s ease-in-out infinite alternate;
+            text-align: center;
+        }
+
+        @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #ffffff, 0 0 16px;
+            }
+
+            to {
+                text-shadow: 0 0 4px #fff, 0 0 8px #ffffff, 0 0 12px #fff, 0 0 16px #fff, ;
+            }
+        }
+
+        #thank {
+            font-size: 20px;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Poppins';
+        }
+
+        footer {
+            margin-top: 60px;
+            width: 100%;
+            text-align: center;
+            font-size: 15px;
+            font-family: 'Poppins';
+        }
+
+        #sideline {
+            text-align: right;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Happy teachers Day Divaker Sir!</h2>
+        <a href="1.jpg" target="_blank">
+            <image src="1.jpg" id="first" width="25%"></image>
+        </a>
+
+        <p id="quote"><i>“Those who educate children well are more to be honored than they who produce them; for these
+                only
+                gave them life, those the art of living well.”</i></p>
+        <p id="sideline">– Aristotle</p><br />
+
+        <p text-align="center" id="thank">Thank You very much Sir for teaching me with such great passion.</p>
+        <footer>
+            <p>Made with <image src="heart.svg" width="20px"></image> by Navashen Dasari</p>
+        </footer>
+
+
+</body>
+
+</html>
