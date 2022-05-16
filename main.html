@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen Player</title>
+    <script src="https://kit.fontawesome.com/a2b3da0c65.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Titillium+Web&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/images/logo2.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url(images/background.jpg) fixed;
+            background-size: cover;
+            background-position: center;
+            scroll-behavior: smooth;
+            height: 350vh;
+        }
+
+
+
+        header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            z-index: 99;
+            box-shadow: 0 0 10px #000;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(0.4rem);
+            -webkit-backdrop-filter: blur(0.4rem);
+        }
+
+        #chk1 {
+            display: none;
+
+
+        }
+
+        i {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        header .logo {
+            flex: 1;
+            /* font-family: 'Raleway'; */
+            font-family: 'Titillium Web';
+            /* text-transform: uppercase; */
+            color: #fff;
+            font-weight: bold;
+            margin-left: 50px;
+            pointer-events: none;
+            font-size: 15px;
+        }
+
+        header ul {
+            flex: 2;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        header ul li {
+            list-style: none;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-family: 'Raleway';
+            text-transform: uppercase;
+            padding: 10px 15px;
+        }
+
+        header ul li a:hover {
+            border-bottom: 2px solid rgb(0, 247, 255);
+            color: #fff;
+            -webkit-animation: glow 1s ease-in-out infinite alternate;
+            -moz-animation: glow 1s ease-in-out infinite alternate;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px aqua, 0 0 40px aqua, 0 0 50px aqua, 0 0 60px aqua, 0 0 70px aqua;
+            }
+
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px lime, 0 0 40px lime, 0 0 50px lime, 0 0 60px lime, 0 0 70px lime, 0 0 80px lime;
+            }
+        }
+
+        header .menu {
+            font-size: 2.5em;
+            display: none;
+        }
+
+        @media(max-width:1000px) {
+            .search-box button {
+                position: absolute;
+            }
+
+            header ul {
+                position: fixed;
+                top: 100px;
+                right: -100%;
+                background: rgba(0, 0, 0, 0.5);
+                height: calc(100vh - 100px);
+                width: 50%;
+                flex-direction: column;
+                align-items: center;
+                transition: right 0.5s linear;
+            }
+
+            header .menu {
+                display: block;
+                width: 100px;
+                text-align: center;
+            }
+
+            #chk1:checked~ul {
+                right: 0;
+
+            }
+        }
+
+        .default {
+            position: relative;
+            top: 20vh;
+            margin: auto;
+            width: 90%;
+            height: 75vh;
+            border-radius: 25px;
+            padding: 2.5rem;
+            padding-top: 5.5rem;
+            background: rgba(255, 255, 255, 0.01);
+            box-shadow: 0 0 10px #fff;
+            backdrop-filter: blur(1rem);
+            -webkit-backdrop-filter: blur(1rem);
+            color: #fff;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins';
+        }
+
+        .default-big {
+            position: relative;
+            top: 40vh;
+            margin: auto;
+            width: 90%;
+            min-height: 75vh;
+            height: auto;
+            border-radius: 25px;
+            padding: 2.5rem;
+            padding-top: 5.5rem;
+            background: rgba(255, 255, 255, 0.01);
+            box-shadow: 0 0 10px #fff;
+            backdrop-filter: blur(1rem);
+            -webkit-backdrop-filter: blur(1rem);
+            color: #fff;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins';
+        }
+
+        .s-3 {
+            position: relative;
+            top: 55vh;
+            margin: auto;
+            width: 90%;
+            min-height: 75vh;
+            height: auto;
+            border-radius: 25px;
+            padding: 2.5rem;
+            padding-top: 5.5rem;
+            background: rgba(255, 255, 255, 0.01);
+            box-shadow: 0 0 10px #fff;
+            backdrop-filter: blur(1rem);
+            -webkit-backdrop-filter: blur(1rem);
+            color: #fff;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins';
+        }
+
+
+        .s-4 {
+            position: relative;
+            top: 70vh;
+            margin: auto;
+            width: 90%;
+            min-height: 75vh;
+            height: auto;
+            border-radius: 25px;
+            padding: 2.5rem;
+            padding-top: 5.5rem;
+            background: rgba(255, 255, 255, 0.01);
+            box-shadow: 0 0 10px #fff;
+            backdrop-filter: blur(1rem);
+            -webkit-backdrop-filter: blur(1rem);
+            color: #fff;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins';
+        }
+
+        .img {
+            position: relative;
+            margin: auto;
+            border-radius: 50%;
+            width: 30vh;
+        }
+
+        .s-1-t {
+            position: relative;
+            top: auto;
+            margin: auto;
+            font-size: 2rem;
+            font-family: 'Titillium Web';
+            font-weight: bold;
+        }
+
+        .small-1 {
+            position: relative;
+            top: auto;
+            font-size: 1rem;
+            font-family: 'QuickSand';
+        }
+
+        .small {
+            position: relative;
+            top: auto;
+            font-size: 1rem;
+            font-family: 'Share Tech';
+        }
+
+        .ab {
+            position: relative;
+            top: 0;
+        }
+
+        iframe {
+            color: #fff;
+            position: relative;
+            top: 0px;
+            margin: auto;
+            min-height: 70vh;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 25px;
+        }
+
+        iframe::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            padding: 20px;
+            grid-gap: 40px;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.01);
+            margin-top: 5rem;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.18);
+        }
+
+        .card:hover {
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.28);
+            cursor: pointer;
+            /* border: rgba(255, 255, 255, 0.5); */
+
+        }
+
+        .container {
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .container:after {
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 20px 20px 0 0;
+            opacity: 0.7;
+        }
+
+        .card1>.container:after {
+            background-image: linear-gradient(135deg,
+                    #0100ec,
+                    #fb36f4);
+        }
+
+        .card2>.container:after {
+            background-image: linear-gradient(135deg,
+                    #2bdce3,
+                    #42ffdb);
+        }
+
+        .card3>.container:after {
+            background-image: linear-gradient(135deg,
+                    #ffab1d,
+                    #f8501c);
+        }
+
+        .details {
+            padding: 20px 10px;
+        }
+
+        .details>h3 {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 18px;
+            margin: 10px 0 15px 0;
+        }
+
+        .details>p {
+            color: #a0a0a0;
+            font-size: 15px;
+            line-height: 30px;
+            font-weight: 400;
+        }
+
+        .hallo {
+            color: #a0a0a0 !important;
+            font-size: 15px !important;
+            line-height: 30px !important;
+            font-weight: 400 !important;
+            font-family: 'Quicksand' !important;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #a0a0a0;
+        }
+
+        h3 {
+            font-family: 'Titillium Web';
+        }
+
+        #plst {
+            font-family: 'Titillium Web';
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Gen Player™</h1>
+        </div>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="#player">Player</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <a href="https://www.youtube.com/channel/UCxQjKK2iZErHZw4xshdWz8w" target="_blank"><i
+                        class="fa fa-youtube"></i></a>
+                <a href="https://github.com/NAVASHEN" target="_blank"><i class="fa fa-github"></i></a>
+                <a href="#reddit" target="_blank"><i class="fa fa-google"></i></a>
+
+            </li>
+        </ul>
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
+    </header>
+
+    <section class="default">
+        <a name="home"></a>
+        <p class="s-1-t">Gen Player™</p>
+        <img src="images/logo2.png" class="img">
+        <p class="small-1">Fast • Simple • Reliable • Encrypted</p>
+        <p class="small">A project under <b>Next Gen Inside™</b></p>
+    </section>
+
+    <a name="player" class="ab"></a>
+    <section class="default-big">
+        <h1 id="plst">Player Styles</h1>
+        <div class="card card1">
+            <div class="container">
+                <img src="p-1.png" alt="">
+            </div>
+            <div class="details"><a href="S-1/style1.html">
+                    <h3>Neumorphic Style</h3>
+                    <p class="hallo">One of the Trending styles in 2022.</p>
+            </div>
+            </a>
+        </div>
+
+        <div class="card card2">
+            <div class="container">
+                <img src="p-2.png" alt="">
+            </div>
+            <div class="details"><a href="S-2/style2.html">
+                    <h3>Glassmorphism Style</h3>
+                    <p class="hallo">The style used for this website :)</p>
+            </div>
+            </a>
+        </div>
+
+
+        <div class="card card3">
+            <div class="container">
+                <img src="p-3.png" alt="">
+            </div>
+            <div class="details"><a href="#">
+                    <h3>Coming Soon</h3>
+                    <p class="hallo">Building in Progress :)</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <a name="contact" class="ab"></a>
+    <section class="s-3">
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScVldQZHUEwy0bVs743NW0v4MWmhr0bdUOk9xiegN7duLQvvA/viewform?embedded=true"
+            frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </section>
+
+</body>
+
+</html>

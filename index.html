@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a2b3da0c65.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Titillium+Web&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/images/logo2.png">
+    <title>Gen Player</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            text-align: center;
+
+            background: #00D6FC;
+            background: -webkit-linear-gradient(bottom right, #00afef, #D1C4FF);
+            background: -moz-linear-gradient(bottom right, #00afef, #D1C4FF);
+            background: linear-gradient(to top left, #00afef, #D1C4FF);
+
+
+            /* background: #B1E7F9;
+            background: -webkit-linear-gradient(top left, #B1E7F9, #D1C4FF);
+            background: -moz-linear-gradient(top left, #B1E7F9, #D1C4FF);
+            background: linear-gradient(to bottom right, #B1E7F9, #D1C4FF); */
+            /* background: #652527;
+            background: -webkit-linear-gradient(top left, #652527, #3D1596);
+            background: -moz-linear-gradient(top left, #652527, #3D1596);
+            background: linear-gradient(to bottom right, #652527, #3D1596); */
+            animation: mymove 2s infinite;
+        }
+
+        .heading {
+            font-family: 'Poppins';
+            position: relative;
+            top: 25%;
+            color: #373435;
+            font-size: 8vh;
+            letter-spacing: 2.5px;
+        }
+
+        p {
+            font-family: 'Titillium Web';
+            position: relative;
+            top: 10%;
+            color: #373435;
+            font-size: 2.5vh;
+            letter-spacing: 2px;
+        }
+
+        .brand {
+            font-family: 'Titillium Web';
+            position: relative;
+            top: 10%;
+            color: #373435;
+            font-size: 10vh;
+            letter-spacing: 2px;
+        }
+
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 48%;
+            margin: auto;
+            border: 6px solid rgba(255, 255, 255, 0);
+            border-radius: 50%;
+            border-top: 6px solid #fff;
+            border-bottom: 6px solid #fff;
+            /* border-right: 6px solid #fff; */
+            width: 50px;
+            height: 50px;
+            -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .proceed {
+            font-family: 'Raleway';
+            margin: auto;
+            text-align: center;
+            position: relative;
+            top: 25%;
+            margin: auto;
+            height: 5vh;
+            width: 12vh;
+            font-size: 2vh;
+            border: 1px solid #37343581;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 0.7vh;
+            text-decoration: none;
+        }
+
+        .proceed:hover {
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        #text {
+            font-family: 'Titillium Web';
+            text-align: center;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translate(-50%);
+            color: #fff;
+            font-size: 1.6vh;
+            letter-spacing: 1px;
+        }
+
+        #image {
+            position: relative;
+            top: 2vh;
+            margin: auto;
+            width: 25vh;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body onload="myCounter()">
+    <br />
+
+    <div class="loader" id="preloader"></div>
+    <img src="images/logo2.png" id="image">
+    <h1 classs="heading">Gen Player™</h1>
+    <a class="proceed" id="btn" href="/main.html">Proceed ></a>
+    <fotter>
+        <h6 id="text">Made with ❤️️ in India.</h6>
+    </fotter>
+    <script>
+        var proceed = document.getElementById('btn');
+        var preloader = document.getElementById('preloader');
+        var text = document.getElementById('text');
+        proceed.style.display = 'none';
+        // text.style.display = 'none';
+
+        function myCounter() {
+            console.log("working");
+            setInterval(counterHead, 5000);
+        }
+
+        function counterHead() {
+            // console.log("hidden");
+            preloader.style.display = 'none';
+            proceed.style.display = 'block';
+            text.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
